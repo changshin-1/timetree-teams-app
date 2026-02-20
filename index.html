@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TimeTree</title>
+    <script src="https://res.cdn.office.net/teams-js/2.19.0/js/MicrosoftTeams.min.js"></script>
+</head>
+<body>
+    <p>이동 중...</p>
+    <script>
+        const TARGET_URL = "https://timetreeapp.com/";
+        
+        // URL에 파라미터가 없을 때만 실행 (SSO 리다이렉트 방지)
+        if (window.location.search === '' && window.location.hash === '') {
+            microsoftTeams.app.initialize()
+                .then(() => {
+                    microsoftTeams.app.openLink(TARGET_URL);
+                });
+        }
+    </script>
+</body>
+</html>
